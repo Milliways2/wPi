@@ -1,0 +1,19 @@
+I have been trying to run ~/wiringPi/examples/Gertboard/voltmeter and keep getting an error:-
+
+Gertboard demo: Simple Voltmeters
+=================================
+Unable to open SPI device: No such file or directory
+
+This should be OK, because I can successfully run the atod program included in the gertboard download, and the SPI jumpers are in place.
+
+/usr/local/lib is in the path (as shown by sudo ldconfig -v)
+and contains libwiringPiDev.so -> libwiringPiDev.so.2.0
+
+
+I must admit I am also puzzled by the commands
+
+gertboardAnalogSetup (100) ;
+analogRead (100) ;
+analogRead (101) ;
+ 
+and am unsure what "pin 100" actually refers to and can't find in the documentation.
