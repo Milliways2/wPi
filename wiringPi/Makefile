@@ -36,12 +36,14 @@ DYNAMIC=libwiringPi.so.$(VERSION)
 
 #DEBUG	= -g -O0
 DEBUG	= -O2
-INCLUDE	= -I.
+INCLUDE	= -I. -I/opt/vc/include
 DEFS	= -D_GNU_SOURCE
 CFLAGS	= $(DEBUG) $(DEFS) -Wformat=2 -Wall -Wextra -Winline $(INCLUDE) -pipe -fPIC
 #CFLAGS	= $(DEBUG) $(DEFS) -Wformat=2 -Wall -Wextra -Wconversion -Winline $(INCLUDE) -pipe -fPIC
 
-LIBS    = -lm -lpthread -lrt -lcrypt
+LIBS    = -lm -lpthread -lrt -lcrypt -L/opt/vc/lib -lbcm_host
+# LDFLAGS	= -L$(DESTDIR)$(PREFIX)/lib -L/opt/vc/lib
+# LIBS    = -lwiringPi -lwiringPiDev -lpthread -lrt -lm -lcrypt -lbcm_host
 
 ###############################################################################
 
@@ -69,7 +71,7 @@ OBJ	=	$(SRC:.c=.o)
 all:		$(DYNAMIC)
 
 .PHONY:	static
-static:	
+static:
 		$Q cat noMoreStatic
 
 $(DYNAMIC):	$(OBJ)

@@ -22,8 +22,3 @@ then run the ldconfig command.
 To un-install wiringPi:
 
   ./build uninstall
-
-Gordon Henderson
-
-projects@drogon.net
-https://projects.drogon.net/

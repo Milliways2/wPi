@@ -31,8 +31,8 @@ DEBUG	= -O3
 INCLUDE	= -I/usr/local/include
 CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 
-LDFLAGS	= -L/usr/local/lib
-LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm -lcrypt -lrt
+LDFLAGS	= -L/usr/local/lib  -L/opt/vc/lib
+LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm -lcrypt -lrt  -lbcm_host
 
 # Should not alter anything below this line
 ###############################################################################
@@ -53,7 +53,7 @@ OBJ	=	$(SRC:.c=.o)
 
 BINS	=	$(SRC:.c=)
 
-all:	
+all:
 	$Q cat README.TXT
 	$Q echo "    $(BINS)" | fmt
 	$Q echo ""
@@ -106,11 +106,11 @@ isr-osc:	isr-osc.o
 
 nes:	nes.o
 	$Q echo [link]
-	$Q $(CC) -o $@ nes.o $(LDFLAGS) $(LDLIBS) 
+	$Q $(CC) -o $@ nes.o $(LDFLAGS) $(LDLIBS)
 
 rht03:	rht03.o
 	$Q echo [link]
-	$Q $(CC) -o $@ rht03.o $(LDFLAGS) $(LDLIBS) 
+	$Q $(CC) -o $@ rht03.o $(LDFLAGS) $(LDLIBS)
 
 pwm:	pwm.o
 	$Q echo [link]

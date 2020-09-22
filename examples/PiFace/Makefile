@@ -32,8 +32,8 @@ CC	= gcc
 INCLUDE	= -I/usr/local/include
 CFLAGS	= $(DEBUG) -Wall $(INCLUDE) -Winline -pipe
 
-LDFLAGS	= -L/usr/local/lib
-LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm
+LDFLAGS	= -L/usr/local/lib -L/opt/vc/lib
+LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm  -lbcm_host
 
 # Should not alter anything below this line
 ###############################################################################

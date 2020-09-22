@@ -1,26 +1,19 @@
-
 wiringPi README
 ===============
 
-Please note that the official way to get wiringPi is via git from
-git.drogon.net and not GitHub.
-
-ie.
-
-  git clone git://git.drogon.net/wiringPi
-
-The version of wiringPi held on GitHub by "Gadgetoid" is used to build the
-wiringPython, Ruby, Perl, etc. wrappers for these other languages. This
-version may lag the official Drogon release.  Pull requests may not be
-accepted to Github....
+This is a clone of wiringPi based on 2.50 with updates to support Pi4
+Original code Copyright (c) 2012-2015 Gordon Henderson
+modified by Ian Binnie
 
 Please see
 
   http://wiringpi.com/
 
-for the official documentation, etc. and the best way to submit bug reports, etc.
-is by sending an email to projects@drogon.net
+for Gordon's documentation
 
-Thanks!
+Functionality is substantially unchanged from wiringPi 2.50 so most of the documentation would be unchanged.
+This release uses code Copyright (c) 2012, Broadcom Europe Ltd included with Raspberry Pi OS (previously called Raspbian) based on Debian Buster
 
-  -Gordon
+References to Gordon's website (with the exceptions noted above) and email have been removed.
+
+
