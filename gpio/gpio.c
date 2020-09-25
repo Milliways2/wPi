@@ -414,7 +414,7 @@ static void doExports (UNU int argc, UNU char *argv [])
 
     if ((l = read (fd, buf, 16)) == 0)
       sprintf (buf, "%s", "?") ;
- 
+
     buf [l] = 0 ;
     if ((buf [strlen (buf) - 1]) == '\n')
       buf [strlen (buf) - 1] = 0 ;
@@ -829,7 +829,7 @@ static void doUsbP (int argc, char *argv [])
     fprintf (stderr, "USB power contol is applicable to B+ and v2 boards only.\n") ;
     exit (1) ;
   }
-    
+
 // Make sure we start in BCM_GPIO mode
 
   wiringPiSetupGpio () ;
@@ -1040,7 +1040,7 @@ static void doReadByte (int argc, char *argv [], int printHex)
  *********************************************************************************
  */
 
-void doRead (int argc, char *argv []) 
+void doRead (int argc, char *argv [])
 {
   int pin, val ;
 
@@ -1063,7 +1063,7 @@ void doRead (int argc, char *argv [])
  *********************************************************************************
  */
 
-void doAread (int argc, char *argv []) 
+void doAread (int argc, char *argv [])
 {
   if (argc != 3)
   {
@@ -1275,7 +1275,7 @@ static void doVersion (char *argv [])
   piBoardId (&model, &rev, &mem, &maker, &warranty) ;
 
   printf ("Raspberry Pi Details:\n") ;
-  printf ("  Type: %s, Revision: %s, Memory: %dMB, Maker: %s %s\n", 
+  printf ("  Type: %s, Revision: %s, Memory: %dMB, Maker: %s %s\n",
       piModelNames [model], piRevisionNames [rev], piMemorySize [mem], piMakerNames [maker], warranty ? "[Out of Warranty]" : "") ;
 
 // Check for device tree
